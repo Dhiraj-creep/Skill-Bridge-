@@ -1,0 +1,51 @@
+{
+  "name": "cep-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n \"api,web\" -c \"cyan,blue\" \"tsx server/index.ts\" \"vite\"",
+    "dev:client": "vite",
+    "dev:server": "tsx server/index.ts",
+    "seed:db": "tsx -e \"import { seedDatabase } from './server/db'; seedDatabase(true);\"",
+    "seed:demo": "tsx -e \"import { seedDatabase } from './server/db'; seedDatabase(true);\"",
+    "backup:db": "tsx scripts/backup-db.ts",
+    "admin:provision": "tsx scripts/provision-admin.ts",
+    "typecheck": "tsc -b && tsc -p tsconfig.server.json --noEmit",
+    "typecheck:server": "tsc -p tsconfig.server.json --noEmit",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "test": "tsx scripts/verify-acceptance.ts && tsx scripts/test-workflows.ts && tsx scripts/test-production-startup.ts && tsx scripts/verify-production-serving.ts",
+    "start": "tsx server/index.ts",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.6.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "lucide-react": "^1.49.0",
+    "postcss": "^8.5.28",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "recharts": "^3.10.1",
+    "tailwindcss": "^3.4.19",
+    "tsx": "^4.23.15"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.5",
+    "oxlint": "^1.81.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
+}

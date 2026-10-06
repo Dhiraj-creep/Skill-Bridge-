@@ -1,0 +1,859 @@
+PAGE 1
+COMMUNITY ENGAGEMENT PROJECT 
+(CEP)
+SKILL BRIDGE
+Community Employment and Skill Matching Portal
+Submitted in Partial Fulfilment
+of the Requirements for the Award of the Degree 
+of
+BACHELOR OF SCIENCE
+[To be added: Information Technology / Data Science]
+SEMESTER V
+By
+Gaurav Mhatre
+Roll Number: 24302A0067
+Under the esteemed guidance of
+[To be added: Guide name]
+[To be added: Guide designation]
+Department of Computing
+DEPARTMENT OF COMPUTING
+VIDYALANKAR SCHOOL OF INFORMATION TECHNOLOGY
+(Autonomous College affiliated to University of Mumbai)
+MUMBAI, 400037
+MAHARASHTRA
+2026 - 2027
+
+PAGE 2
+ii
+VIDYALANKAR SCHOOL OF INFORMATION TECHNOLOGY
+(Autonomous College affiliated to University of Mumbai)
+MUMBAI–MAHARASHTRA–400037
+DEPARTMENT OF COMPUTING
+CERTIFICATE
+I hereby certify that Gaurav Mhatre (Roll Number: 24302A0067), student of Vidyalankar School of 
+Information Technology, studying in T.Y. B.Sc. [To be added: Information Technology / Data Science], 
+Semester V, has completed a C.E. project titled “Skill Bridge — Community Employment and Skill 
+Matching Portal” at Khalsa College, Matunga, during the academic year 2026–27.
+Internal Guide Head of Department 
+Department of Computing
+Internal Examiner External Examiner
+Date: Principal
+
+PAGE 3
+iii
+ORGANIZATION VISIT OBSERVATION SHEET
+Attach the Organization Visit Observation Sheet duly signed by the reporting officer and mentor.
+Organization: Khalsa College, Matunga
+Student: Gaurav Mhatre | Roll Number: 24302A0067
+[To be added: Signed observation sheet covering all three visits]
+
+PAGE 4
+iv
+PROJECT GUIDE MEETING RECORD
+Attach the Project Guide Meeting Record duly signed by the mentor.
+Project: Skill Bridge — Community Employment and Skill Matching Portal
+Student: Gaurav Mhatre | Roll Number: 24302A0067
+[To be added: Signed guide meeting record]
+
+PAGE 5
+v
+DECLARATION
+I, Gaurav Mhatre, student of Vidyalankar School of Information Technology in T.Y. B.Sc. [To be 
+added: Information Technology / Data Science], Semester V, declare that the work described in this 
+report concerns our project “Skill Bridge — Community Employment and Skill Matching Portal”, 
+completed as part of CEP in 2026–27.
+The fieldwork consisted of three visits to Khalsa College, Matunga. Our team collected real student 
+responses by manually circulating a Google Form. The technical descriptions in this report concern the 
+shared application developed for the project.
+Sources used in preparing the report are identified in the references. Supporting forms and signatures 
+are to be attached in their prescribed locations.
+Signature of the Student with Date: ____________________
+Gaurav Mhatre
+Roll Number: 24302A0067
+
+PAGE 6
+vi
+ACKNOWLEDGEMENT
+I acknowledge the opportunity provided by the University of Mumbai and Vidyalankar School of 
+Information Technology to undertake this CEP project. It helped bring together fieldwork, system 
+design and technical verification.
+I thank [To be added: Guide name], our faculty mentor, and Khalsa College, Matunga, for their support 
+of the project process. The students who completed the circulated Google Form made an important 
+contribution to the fieldwork.
+I am thankful to my teammates, Dhiraj Tendulkar, Vidhi Mahato and Varun Patil. Our shared work 
+forms the basis of this report, and I value the cooperation involved in developing and reviewing the 
+application.
+
+PAGE 7
+vii
+ABSTRACT
+Skill Bridge was developed to connect student placement activities with coordinator follow-up through 
+a shared web application. The project formed part of our CEP work at Khalsa College, Matunga, where 
+all three team visits took place. Student information was gathered manually through a circulated Google 
+Form. The purpose was to support a more connected process for opportunity discovery, preparation, 
+applications and requests for assistance, while keeping responsibilities and access distinct.
+The solution contains student profiles, opportunity listings, saved records, applications, workshop 
+participation, feedback and guidance. Coordinators manage the operational queues and record 
+decisions. Administrators handle protected system documents, approved diagnostics and backup 
+restoration. Research information is presented publicly through summaries, with individual respondent 
+records limited to authorized staff. Persistent records allow actions and decisions to be retrieved across 
+sessions.
+The technical structure consists of a React and TypeScript frontend, an Express API and a SQLite 
+database. Vite prepares the frontend build, Tailwind CSS provides styling and Recharts supports charts. 
+Matching uses fixed weighted comparisons rather than machine learning. It provides reasons and 
+eligibility cautions so that students can interpret the result instead of treating it as a hiring prediction.
+The final recorded verification passed 37 acceptance checks, 97 workflow and security checks, 14 
+lifecycle checks and 9 production-serving checks. The build and TypeScript checks also passed. This 
+evidence supports the tested local operation of the portal, including production startup and 
+administration. It does not replace field-based user acceptance or demonstrate improved placement 
+rates. The project delivers a practical system and a documented technical baseline. Verified survey 
+analysis, visit evidence and formal acceptance records remain necessary supporting material for the 
+final submission.
+
+PAGE 8
+viii
+TABLE OF CONTENT
+CHAPTER 1: INTRODUCTION 1
+1.1 Project Background.......................................................................................................................1
+1.2 Problem Statement........................................................................................................................1
+1.3 Need for the Project ......................................................................................................................1
+1.4 Objectives .....................................................................................................................................2
+1.5 Scope.............................................................................................................................................2
+1.6 SDG Alignment ............................................................................................................................2
+CHAPTER 2: REQUIREMENT ANALYSIS AND LITERATURE REVIEW 3
+2.1 Methodology Adopted ..................................................................................................................3
+2.2 Stakeholder Interactions................................................................................................................3
+2.3 Domain Overview.........................................................................................................................4
+2.4 Existing Process Analysis.............................................................................................................4
+2.5 Existing Solutions and Related Work ...........................................................................................4
+2.6 Technologies Studied....................................................................................................................4
+2.7 Research Gap and Need for Proposed Solution ............................................................................5
+2.8 Challenges Identified ....................................................................................................................5
+CHAPTER 3: PROPOSED SOLUTION 6
+3.1 Solution Overview ........................................................................................................................6
+3.2 System Architecture......................................................................................................................6
+3.3 Process Flow Diagram..................................................................................................................6
+3.4 Module Description ......................................................................................................................6
+3.5 Advantages of Proposed Solution.................................................................................................7
+CHAPTER 4: SYSTEM DESIGN 8
+4.1 System Design Overview..............................................................................................................8
+4.2 Use Case Diagram.........................................................................................................................8
+4.3 Workflow Diagram.......................................................................................................................9
+4.4 Module Design..............................................................................................................................9
+CHAPTER 5: PROJECT IMPLEMENTATION 11
+5.1 Development Methodology ........................................................................................................11
+5.2 Module-wise Implementation .....................................................................................................11
+5.3 User Interface Solution ...............................................................................................................12
+5.4 Screenshots of Developed Solution ............................................................................................13
+CHAPTER 6: TESTING AND VALIDATION 14
+6.1 Test Cases...................................................................................................................................14
+
+PAGE 9
+ix
+6.2 Test Results.................................................................................................................................15
+6.3 User Acceptance Testing ............................................................................................................15
+6.4 Feedback from Stakeholders.......................................................................................................15
+6.5 Performance Evaluation..............................................................................................................15
+CHAPTER 7: RESULTS AND IMPACT ASSESSMENT 16
+7.1 Deliverables Submitted...............................................................................................................16
+7.2 Results Achieved ........................................................................................................................16
+7.3 Impact on Organization...............................................................................................................16
+7.4 SDG Contribution .......................................................................................................................16
+CHAPTER 8: CONCLUSION AND FUTURE SCOPE 17
+8.1 Conclusion ..................................................................................................................................17
+8.2 Key Findings...............................................................................................................................17
+8.3 Recommendations.......................................................................................................................17
+8.4 Future Enhancements..................................................................................................................17
+REFERENCES 18
+Research Papers................................................................................................................................18
+Books Referred .................................................................................................................................18
+Website .............................................................................................................................................18
+ANNEXURES 19
+Annexure A: Field Visit Photographs...............................................................................................19
+ANNEXURE B: SURVEY QUESTIONNAIRE 22
+ANNEXURE C: INTERVIEW QUESTIONS 24
+ANNEXURE D: REPORTING OFFICER FEEDBACK FORM 25
+ANNEXURE G: SOURCE CODE REPOSITORY 26
+ANNEXURE H: USER MANUAL 27
+
+PAGE 10
+x
+TABLE OF FIGURES
+Figure 1: System Architecture of Skill Bridge (placeholder) .................................................................6
+Figure 2: Process Flow of Skill Bridge (placeholder).............................................................................6
+Figure 3: Use Case Diagram of Skill Bridge (placeholder)....................................................................8
+Figure 4: Application and Workshop Workflow of Skill Bridge (placeholder) .....................................9
+Figure 5: Key Components of the Skill Bridge Database (placeholder)...............................................10
+Figure 6: Student Workspace of Skill Bridge (placeholder).................................................................13
+Figure 7: Placement Coordinator Workspace of Skill Bridge (placeholder) ........................................13
+Figure 8: Research Summary View of Skill Bridge (placeholder) .......................................................13
+Figure 9: Visit 1 at Khalsa College, Matunga.......................................................................................19
+Figure 10: Visit 2 at Khalsa College, Matunga.....................................................................................20
+Figure 11: Visit 3 at Khalsa College, Matunga.....................................................................................21
+
+PAGE 11
+xi
+TABLE OF TABLES
+Table 1: Project team ..............................................................................................................................1
+Table 2: Fieldwork record.......................................................................................................................3
+Table 3: Technologies used ....................................................................................................................4
+Table 4: Functional modules...................................................................................................................7
+Table 5: Actors and access......................................................................................................................8
+Table 6: Database entities.......................................................................................................................9
+Table 7: Matching score components ...................................................................................................10
+Table 8: Implementation mapping ........................................................................................................11
+Table 9: Representative test cases.........................................................................................................14
+Table 10: Recorded automated results..................................................................................................15
+Table 11: Repository contents...............................................................................................................26
+
+PAGE 12
+1
+CHAPTER 1: INTRODUCTION 
+1.1 Project Background 
+The setting for our project was Khalsa College, Matunga, where the team carried out all three visits. 
+We used a Google Form circulated among students to gather information for the project. The resulting 
+application, Skill Bridge, brings placement-related tasks into a shared system with different access for 
+students and coordinators. I describe both the fieldwork context and the implementation so that the 
+relationship between the community problem and the software remains clear.
+Table 1: Project team
+Member Roll number
+Dhiraj Tendulkar 24302A0004
+Vidhi Mahato 24302A0028
+Gaurav Mhatre 24302A0067
+Varun Patil 24302D0074
+1.2 Problem Statement 
+The central design problem is keeping opportunity information, student preferences and coordinator 
+decisions connected. When these records are handled separately, a student can struggle to identify a 
+suitable opening or understand an application’s progress. The proposed portal gives each participant an 
+appropriate workspace and records the interaction between them. Verified numerical findings from the 
+collected Google Form responses are [To be added].
+1.3 Need for the Project 
+Skill Bridge is needed as a practical link between placement information and the actions taken on it. 
+Searchable listings are useful only when students can act on them and coordinators can respond. 
+Bringing applications, workshops and guidance into the same database provides continuity. The project 
+also provides a setting in which role separation and accountable record keeping can be demonstrated.
+
+PAGE 13
+2
+1.4 Objectives 
+The following objectives provide a practical basis for evaluating the work. They focus on completed 
+user actions and protected records rather than unmeasured promises about employment outcomes.
+Primary Objectives 
+• Provide a distinct student workspace and coordinator workspace with server-enforced access.
+• Support discovery, saving and application for opportunities with visible status updates.
+• Connect workshop participation, feedback and guidance with coordinator follow-up.
+Secondary Objectives 
+• Explain opportunity matching through understandable rules and reasons.
+• Preserve related records and reject invalid or unauthorized changes.
+• Provide aggregate research reporting while protecting individual responses.
+• Maintain repeatable tests and practical operating instructions.
+1.5 Scope 
+The project boundary is the student–coordinator workflow and the administration needed to maintain 
+it. The application supports opportunity records, applications, training participation and support 
+requests, with research reporting alongside these operations. Recruitment decisions outside the portal 
+and long-term employment outcomes are beyond the demonstrated scope. External deployment and 
+institutional acceptance records are [To be added].
+1.6 SDG Alignment 
+The educational aspect of the portal supports SDG 4 by organising training and career guidance. Its 
+employment-support functions are consistent with SDG 8 because they make opportunities and 
+preparation requirements easier to explore. The report treats this as alignment of project objectives, not 
+proof that the software has already improved employment conditions.
+
+PAGE 14
+3
+CHAPTER 2: REQUIREMENT ANALYSIS AND 
+LITERATURE REVIEW 
+2.1 Methodology Adopted 
+We gathered community information through three visits to the same college and a Google Form shared 
+manually with students. The field responses were genuine; the final exported response sheet and its 
+confirmed totals should accompany the report. Development proceeded through implementation, 
+review and correction of specific defects. This method kept the application’s technical validation 
+separate from claims about the community’s experience.
+Table 2: Fieldwork record
+Item Confirmed information or record
+Organization Khalsa College, Matunga
+Visits Three visits, all at the same college
+Collection method Google Form manually circulated among students
+Visit dates [To be added]
+Confirmed response count [To be added]
+Google Form link and 
+response export
+[To be added]
+Verified findings and 
+response summary
+[To be added]
+2.2 Stakeholder Interactions 
+Student responses formed the primary field input. Our team worked collectively, so the report does not 
+assign unsupported individual responsibilities or separate datasets to members. Placement staff and 
+administrators are relevant stakeholders because the portal gives them management functions. The 
+identities and recorded comments of consulted staff are [To be added].
+
+PAGE 15
+4
+2.3 Domain Overview 
+The portal belongs to the employment-preparation and college-placement domain. It treats a vacancy 
+as more than a title by recording skills, location, eligibility and deadlines. It also recognises that students 
+may need preparation or guidance before applying. This domain model explains why the system 
+includes workshops and support requests alongside opportunities.
+2.4 Existing Process Analysis 
+Our documented starting point is the Google Form collection activity. Survey collection and operational 
+placement management serve different purposes: the first records responses, while the second tracks 
+ongoing actions and decisions. The proposed system addresses the latter through persistent records. A 
+confirmed institutional process diagram is [To be added].
+2.5 Existing Solutions and Related Work 
+The project did not establish a benchmark against a named external placement product. The available 
+comparison concerns function: a form collects responses, whereas the portal connects those information 
+needs with accounts, workflows and records. Published studies and independently assessed alternatives 
+must be cited only after verification; those references are [To be added].
+2.6 Technologies Studied 
+Our application uses a TypeScript-based frontend and server with SQLite persistence. The technology 
+selection suits a college project that needs interactive screens, authenticated requests and related 
+records. The table below identifies each tool’s actual role. It does not imply a comparative experiment 
+with frameworks that are absent from the repository.
+Table 3: Technologies used
+Technology Role in Skill Bridge
+React Component-based frontend and role-specific pages
+TypeScript Typed models and compile-time checks for frontend and server
+Vite Frontend development server and production bundling
+Tailwind CSS Interface layout and responsive styling
+
+PAGE 16
+5
+Technology Role in Skill Bridge
+Recharts Research charts and visual summaries
+Node.js and Express Runtime, API routes, authentication and authorization
+SQLite through node:sqlite Persistent relational records, foreign keys and transactions
+tsx and oxlint TypeScript execution and lint checks
+Google Forms Manual circulation and collection of real student field responses
+2.7 Research Gap and Need for Proposed Solution 
+The gap identified for system design is continuity: information about a student’s needs should connect 
+to opportunities and recorded actions. Skill Bridge creates that continuity through profiles, matching 
+explanations, applications and support queues. The project makes a practical contribution through 
+integration; formal novelty against published research remains [To be added].
+2.8 Challenges Identified 
+The project’s technical difficulties centred on data integrity and predictable behaviour. Restoring 
+records must preserve relationships, users must receive only permitted data, and production startup must 
+not depend on demo accounts. Documented field difficulties, if any, should be recorded from the visit 
+notes. They are not inferred from problems encountered while programming.
+
+PAGE 17
+6
+CHAPTER 3: PROPOSED SOLUTION 
+3.1 Solution Overview 
+The proposed solution uses one application with distinct access levels. A student’s account supports 
+personal actions, while staff accounts support coordination and administration. Shared records connect 
+the interfaces without giving every user the same permissions. This design is central to both the project 
+demonstration and its intended operational use.
+3.2 System Architecture 
+A client–server architecture separates presentation from data operations. React renders the screens, an 
+API service sends requests, and Express performs validation and permission checks. SQLite stores the 
+resulting records. Production serving combines the compiled frontend and API behind the server, while 
+configuration is established before storage is opened.
+[To be added]
+Figure 1: System Architecture of Skill Bridge (placeholder)
+3.3 Process Flow Diagram 
+The workflow connects discovery with follow-up. After authentication, a student chooses an 
+opportunity or support service. The server checks the request and stores it. A coordinator can then 
+review the record and update its status. Returning to the student workspace shows the latest persisted 
+result.
+[To be added]
+Figure 2: Process Flow of Skill Bridge (placeholder)
+3.4 Module Description 
+Module boundaries follow the project’s user activities. Common session and API services support the 
+screens, but application decisions, workshop enrolments and research records remain distinct entities. 
+This makes each workflow easier to understand and test.
+
+PAGE 18
+7
+Table 4: Functional modules
+Module Responsibility
+Authentication and access Sessions, login/logout, role checks and account isolation
+Student profile and matching Profile preferences, skills and explained opportunity relevance
+Opportunities and 
+applications
+Listing discovery, saved openings, submission and review status
+Workshops Session management, capacity, enrolment and attendance
+Feedback and guidance Student requests and coordinator responses
+Research Restricted response records and public aggregate reporting
+Study and visit records Three-visit documentation, action plans and evidence fields
+Administration Protected content, approved diagnostics and backup/restore
+3.5 Advantages of Proposed Solution 
+The proposed system improves organisation by connecting related tasks through shared records. Its 
+access model helps separate personal student work from institutional operations. Matching explanations 
+and visible statuses improve the information available for decisions, though the project does not 
+quantify an increase in employment outcomes.
+
+PAGE 19
+8
+CHAPTER 4: SYSTEM DESIGN 
+4.1 System Design Overview 
+The design separates display state from persistent state. Components render information, shared context 
+coordinates refreshes, and the API performs protected operations. Database relationships link students 
+to applications and workshops. This structure supports account isolation and reliable retrieval after a 
+page refresh.
+4.2 Use Case Diagram 
+The use-case model identifies what each role is allowed to accomplish. Student actions concern the 
+signed-in account, coordinator actions concern placement operations, and administrator actions concern 
+system maintenance. Public research views use aggregates rather than individual respondent records.
+Table 5: Actors and access
+Actor Permitted scope
+Public visitor
+Permitted public pages, opportunity information and aggregate 
+research
+Student
+Own profile, saved listings, applications, enrolments, feedback and 
+guidance
+Placement Coordinator Operational management, decisions, rosters and restricted research
+Administrator
+Protected configuration, diagnostics, backups and authorized 
+management
+[To be added]
+Figure 3: Use Case Diagram of Skill Bridge (placeholder)
+
+PAGE 20
+9
+4.3 Workflow Diagram 
+Workflow design accounts for both successful and unsuccessful requests. The server verifies ownership, 
+permission and input before writing. A duplicate or invalid request returns an error, while a successful 
+write returns confirmation. Enrolment uses transactional handling to keep participation and capacity 
+consistent.
+[To be added]
+Figure 4: Application and Workshop Workflow of Skill Bridge (placeholder)
+4.4 Module Design 
+Module implementation is supported by typed models and shared services. Data changes pass through 
+the API rather than remaining only in browser state. The matching module compares department, 
+preferred role, skills, location and a detected percentage cutoff. Its output is an explanation of fit, not a 
+trained predictive model.
+Database records and relationships 
+Table 6: Database entities
+Entity or group Purpose
+users; sessions Account identities, roles and active authentication sessions
+student_profiles Student-specific skills, interests and academic information
+opportunities; applications Listings linked to student submissions and review decisions
+saved_opportunities Student-specific saved listings
+training_sessions; 
+workshop_enrollments
+Workshop information and participation relationships
+feedback_submissions; 
+guidance_requests
+Requests and staff follow-up
+survey_responses Structured responses with provenance and controlled access
+
+PAGE 21
+10
+Entity or group Purpose
+employer_outreach Staff-managed employer contact records
+system_documents; 
+app_metadata
+Content documents and database initialisation state
+[To be added]
+Figure 5: Key Components of the Skill Bridge Database (placeholder)
+Opportunity matching process 
+Table 7: Matching score components
+Component Points Implemented rule
+Department 40 Awarded when the listing includes the profile department
+Preferred role 25
+Case-insensitive containment between a preferred role and 
+listing title
+Skill overlap Up to 20 Seven points per overlapping listed skill, capped at 20
+Location 10 Preferred location matches, or the listing uses remote work
+Academic cutoff 5 Entered percentage meets a detected two-digit percentage cutoff
+The score is the sum of the awarded components, bounded between 0 and 100. Skill points are calculated 
+as min(20, 7 × number of matching listing skills). A score of 75 or more is labelled High Fit; 50–74 is 
+Moderate Fit; 30–49 is Partial Fit; lower scores are General Opportunity.
+Text comparisons use case-insensitive containment, so the result depends on the terms entered in the 
+profile and listing. The eligibility check detects a two-digit percentage cutoff and returns an eligibility 
+caution where appropriate. It is not a complete eligibility parser. Students must review the original 
+criteria even when the fit score is high.
+
+PAGE 22
+11
+CHAPTER 5: PROJECT IMPLEMENTATION 
+5.1 Development Methodology 
+Our development method relied on small, verifiable changes to the existing project. Reviews identified 
+defects, the relevant code was adjusted, and checks were rerun. The work covered both visible 
+functionality and less visible concerns such as database integrity and startup configuration. Disposable 
+databases supported repeatable testing.
+5.2 Module-wise Implementation 
+The frontend modules use shared context and API methods instead of managing unrelated local copies 
+of important records. The backend validates requests and applies the corresponding database operation. 
+Coordinator updates and student actions therefore refer to the same stored entities. Administrative 
+backup and diagnostic functions are kept behind elevated permissions.
+Table 8: Implementation mapping
+Source area Implementation role
+src/pages User-facing pages
+src/components Reusable interface components
+src/context/AppContext.tsx Shared session and application state
+src/services/apiService.ts Client API communication
+src/utils/matching.ts Rule-based matching function
+server/index.ts API and frontend-serving entry point
+server/db.ts Schema and database initialisation
+server/validation.ts Input and restoration validators
+server/config.ts Environment and runtime configuration
+scripts Tests, provisioning and backup utilities
+README.md; .env.example Setup instructions and configuration examples
+
+PAGE 23
+12
+Authentication and data integrity 
+Passwords are hashed with scrypt and a salt. Session tokens are carried in an HttpOnly cookie, and 
+protected routes verify the session and role. Public registration is restricted to the student role. Database 
+uniqueness constraints help prevent duplicate applications and enrolments. Restore operations validate 
+supported content and relationships before transactional updates.
+Research summaries 
+The reporting process groups responses by the requested filters and computes counts, distributions and 
+rating summaries. Non-rated responses such as “Have not attended” are not treated as numeric 
+satisfaction scores. Public reporting uses aggregate endpoints; individual responses are limited to 
+authorized staff. The actual field-response totals and numerical findings are [To be added].
+5.3 User Interface Solution 
+Interface design emphasises distinct workspaces and visible state. Students can follow their own records 
+without using staff management screens. Coordinators can review and update operational work through 
+dedicated controls. Responsive styles are present, although this report does not claim a completed 
+evaluation on every device or assistive technology.
+
+PAGE 24
+13
+5.4 Screenshots of Developed Solution 
+Visual evidence of the application belongs in the figure spaces below. Capture the working version with 
+appropriate test records so that the images demonstrate the implementation without disclosing student 
+data.
+(add picture)
+Figure 6: Student Workspace of Skill Bridge (placeholder)
+(add picture)
+Figure 7: Placement Coordinator Workspace of Skill Bridge (placeholder)
+(add picture)
+Figure 8: Research Summary View of Skill Bridge (placeholder)
+
+PAGE 25
+14
+CHAPTER 6: TESTING AND VALIDATION 
+6.1 Test Cases 
+Tests were selected around the behaviour needed by users and the rules protecting their records. This 
+included account isolation, application decisions, capacity checks and safe restoration. A separate 
+production check examined startup and serving. The cases below connect these checks with expected 
+outcomes.
+Table 9: Representative test cases
+Area Scenario Expected result
+Authentication
+Invalid credentials and unauthenticated 
+requests
+Rejected
+Role authorization Student requests staff-only resources Rejected
+Account isolation
+One student requests another student’s 
+records
+Private records not exposed
+Application 
+lifecycle
+Submit, reject duplicate, record 
+coordinator decision
+Expected records and status 
+retained
+Workshop 
+lifecycle
+Enrol, reject duplicate, cancel, enforce 
+capacity
+Participation rules enforced
+Research privacy Public/student access to raw responses
+Blocked; aggregate reporting 
+available
+Content and 
+restoration
+Malformed documents and invalid 
+relationships
+Rejected; valid restoration 
+supported
+Diagnostics
+Client-supplied SQL and approved query 
+identifiers
+Raw SQL blocked; approved 
+queries work
+Production 
+lifecycle
+Fresh database, restart and admin 
+provisioning
+Startup and provisioning checks 
+passed
+
+PAGE 26
+15
+6.2 Test Results 
+The final recorded test run reported no failures across the listed suites. Production serving included 
+static assets, direct routes and a provisioned administrator’s session. Compilation also passed. The 
+results should be read as evidence for tested cases, not a universal guarantee of correctness or security.
+Table 10: Recorded automated results
+Suite Checks Result
+Acceptance 37 Passed
+Workflow and security 97 Passed
+Production lifecycle 14 Passed
+Production serving 9 Passed
+Total 157 Passed
+6.3 User Acceptance Testing 
+Acceptance by actual users requires a record of attempted tasks, difficulties and feedback. Those results 
+and signatures are [To be added]. The project’s automated acceptance checks are technical tests; they 
+do not establish institutional approval or successful task completion by field participants.
+6.4 Feedback from Stakeholders 
+The report recognises the Google Form collection as genuine fieldwork. The response export, analysed 
+findings and documented staff comments are [To be added]. Feedback is not reconstructed from sample 
+text inside the application or from the software test results.
+6.5 Performance Evaluation 
+Performance evaluation must distinguish a functioning system from a benchmarked one. The tests 
+verify expected responses and protected operations, but they do not report latency distributions or 
+sustained concurrency. A repeatable workload, hardware description and measured results are [To be 
+added].
+
+PAGE 27
+16
+CHAPTER 7: RESULTS AND IMPACT ASSESSMENT 
+7.1 Deliverables Submitted 
+The deliverables comprise the application, source modules, database schema, verification scripts and 
+documentation. The repository address and formal submission details are [To be added]. The table 
+below identifies what each artefact contributes without assuming that a live handover has already been 
+approved.
+7.2 Results Achieved 
+The project achieved the implementation of the planned role-based workflows and a passing automated 
+verification run. Matching returns reasons, staff decisions update records, and restoration preserves 
+tested relationships. The result is a technically demonstrated portal; community-level outcome measures 
+require additional evidence.
+7.3 Impact on Organization 
+The system provides a basis for more organised placement support through records that connect users 
+and actions. Its impact depends on maintained listings, staff participation and student use. Evidence of 
+deployment, sustained adoption and measured benefit is [To be added]. The report therefore 
+distinguishes technical delivery from organisational effect.
+7.4 SDG Contribution 
+The implementation reflects the selected SDGs through training access and employment preparation. 
+Its role is to support students and coordination, not to guarantee employment. Continued monitoring 
+would be needed to connect use of the portal with measurable educational or work-related outcomes.
+
+PAGE 28
+17
+CHAPTER 8: CONCLUSION AND FUTURE SCOPE 
+8.1 Conclusion 
+The completed implementation demonstrates how student activities and coordinator decisions can share 
+a consistent workflow. All three field visits were undertaken at Khalsa College, Matunga, and the survey 
+was collected manually through Google Forms. Technical verification is documented separately from 
+community outcomes. The final report should be accompanied by the original evidence and signed 
+records.
+8.2 Key Findings 
+The work highlights the importance of connecting records without mixing permissions. It also shows 
+why fresh-database testing is necessary alongside compilation. The matching process is useful as an 
+explanation of relevance, but it remains limited by profile quality and the stated rules. Findings from 
+the actual survey are [To be added].
+8.3 Recommendations 
+I recommend a small supervised rollout before wider use. Confirm role access, data persistence and 
+recovery on the actual host, then record student and coordinator feedback. Maintain a clear owner for 
+each operational task. Complete the documentary gaps using original field records rather than estimates.
+8.4 Future Enhancements 
+Further versions may support reminders, configurable matching weights and broader progress reporting. 
+These are potential enhancements rather than completed deliverables. Their value should be assessed 
+through user feedback, and the underlying permission and recovery mechanisms should remain part of 
+regression testing.
+
+PAGE 29
+18
+REFERENCES 
+Research Papers 
+[To be added: Verified research papers actually consulted, formatted in MLA style.]
+Books Referred 
+[To be added: Books actually consulted, with verified MLA bibliographic details.]
+Website 
+[To be added: Websites actually consulted and the topics referred to, with verified URLs and access 
+details.]
+Project source material:
+Skill Bridge Project Team. Skill Bridge: Community Employment and Skill Matching Portal. Project 
+source code, 2026.
+Skill Bridge Project Team. “Project Setup and Verification.” README.md, 2026.
+Skill Bridge Project Team. “Opportunity Matching.” src/utils/matching.ts, 2026.
+Skill Bridge Project Team. “Survey Questionnaire.” src/data/defaultSurveySeed.ts, 2026.
+Skill Bridge Project Team. “Verification Suites.” scripts/verify-acceptance.ts, scripts/test-workflows.ts, 
+scripts/test-production-startup.ts, and scripts/verify-production-serving.ts, 2026.
+
+PAGE 30
+19
+ANNEXURES 
+The annexures retain the labels prescribed in the supplied format: A, B, C, D, G and H.
+Annexure A: Field Visit Photographs 
+Visit 1 — Khalsa College, Matunga 
+Date of visit: [To be added]
+(add picture)
+Figure 9: Visit 1 at Khalsa College, Matunga
+
+PAGE 31
+20
+Visit 2 — Khalsa College, Matunga 
+Date of visit: [To be added]
+(add picture)
+Figure 10: Visit 2 at Khalsa College, Matunga
+
+PAGE 32
+21
+Visit 3 — Khalsa College, Matunga 
+Date of visit: [To be added]
+(add picture)
+Figure 11: Visit 3 at Khalsa College, Matunga
+
+PAGE 33
+22
+ANNEXURE B: SURVEY QUESTIONNAIRE 
+The team used a manually circulated Google Form to gather genuine responses. The following questions 
+are available in the project questionnaire. The original collection form and any version changes are [To 
+be added].
+1. Which department or course are you studying in?
+Response options: Computer Science (CS); Information Technology (IT); Data Science (DS).
+2. What is your current year of study?
+Response options: First; Second; Third; Fourth; Other.
+3. What job role or career domain are you mainly interested in?
+Response options: Open text response.
+________________________________________________________________
+________________________________________________________________
+4. How many campus recruitment drives offered roles relevant to your preferred domain during 
+the current academic year?
+Response options: 0; 1–2; 3 or more; Not sure.
+5. Is the placement cell currently meeting your placement-related needs?
+Response options: Yes; Partly; No; Not enough experience to judge.
+6. How often do you receive placement information early enough to prepare and apply?
+Response options: Always; Sometimes; Rarely; Never; Not applicable.
+
+PAGE 34
+23
+7. How useful has the placement training you attended been for your preferred role?
+Response options: 1–5, where 1 is Not useful and 5 is Very useful; Have not attended.
+8. What is the biggest barrier you face in getting a suitable placement?
+Response options: Limited relevant roles; Eligibility restrictions; Skill gaps; Late information; 
+Interview preparation; Location or pay mismatch; Other; No major barrier.
+9. Which placement support do you need most urgently?
+Response options: Relevant employer connections; Technical training; Aptitude preparation; Resume 
+and interview help; Career guidance; Timely alerts; Internship support; Other.
+10. How satisfied are you with overall placement support?
+Response options: 1–5, where 1 is Very dissatisfied and 5 is Very satisfied; Not enough experience to 
+judge.
+11. Briefly describe your experience with the placement process.
+Response options: Open text response.
+________________________________________________________________
+________________________________________________________________
+12. What one change would most improve placement support for you?
+Response options: Open text response.
+________________________________________________________________
+________________________________________________________________
+
+PAGE 35
+24
+ANNEXURE C: INTERVIEW QUESTIONS 
+The project includes an interview guide for placement-coordination discussions. The questions below 
+reproduce that guide. Interview dates, respondent identity, consent and recorded answers are [To be 
+added]. Illustrative answers in the software are not reproduced as actual staff statements.
+1. How are student preferences and skills collected?
+2. How many relevant employers and roles were available by department?
+3. What explains differences in opportunities?
+4. How are new employers approached?
+5. What makes specialist employers difficult to attract?
+6. How are notices received and published?
+7. How are training needs identified?
+8. How is training effectiveness measured?
+9. What alternatives exist for students excluded by eligibility criteria?
+10. Are duties, location, and pay details checked before publication?
+11. What staffing, time, or budget constraints exist?
+12. Which concerns are already being addressed?
+13. What additional actions are feasible, with owners and timelines?
+14. What can Skill Bridge support?
+15. How is student feedback reviewed and answered?
+
+PAGE 36
+25
+ANNEXURE D: REPORTING OFFICER FEEDBACK 
+FORM 
+Blank form for assessment of the prepared project
+Project: Skill Bridge — Community Employment and Skill Matching Portal
+Organization: Khalsa College, Matunga
+Student: Gaurav Mhatre | Roll Number: 24302A0067
+Reporting officer name: ______________________________
+Designation: _______________________________________
+Date of review: _____________________________________
+Relevance of the project to student/community needs
+________________________________________________________________
+________________________________________________________________
+Usefulness and clarity of the developed solution
+________________________________________________________________
+________________________________________________________________
+Observations on the demonstration
+________________________________________________________________
+________________________________________________________________
+Suggested improvements
+________________________________________________________________
+________________________________________________________________
+Overall assessment and acceptance status
+________________________________________________________________
+________________________________________________________________
+Reporting officer signature: __________________________
+Organization stamp, if required: ______________________
+
+PAGE 37
+26
+ANNEXURE G: SOURCE CODE REPOSITORY 
+Repository link: [To be added]
+Submitted version or commit identifier: [To be added]
+Contents uploaded and verified by: [To be added]
+The following inventory identifies the project contents to include in the submission. It does not confirm 
+that a repository has already been published.
+Table 11: Repository contents
+Source area Contents
+src/pages User-facing pages
+src/components Reusable interface components
+src/context/AppContext.tsx Shared session and application state
+src/services/apiService.ts Client API communication
+src/utils/matching.ts Rule-based matching function
+server/index.ts API and frontend-serving entry point
+server/db.ts Schema and database initialisation
+server/validation.ts Input and restoration validators
+server/config.ts Environment and runtime configuration
+scripts Tests, provisioning and backup utilities
+README.md; .env.example Setup instructions and configuration examples
+Exclude passwords, private environment files, real student records and local database backups from any 
+public repository. Provide authorised access to sensitive evidence separately.
+
+PAGE 38
+27
+ANNEXURE H: USER MANUAL 
+Use this guide to follow the main student and staff activities. A user must sign in with the appropriate 
+account before performing protected actions. The live website address is [To be added].
+Student workflow 
+1. Enter the student workspace and complete the profile fields used for matching.
+2. Find a listing through browsing or filtering and inspect its requirements.
+3. Check the match reasons without treating the score as a selection guarantee.
+4. Submit an application once and follow its recorded status.
+5. Review workshop details before enrolling or cancelling participation.
+6. Record a feedback or guidance request when needed, then sign out securely.
+Coordinator workflow 
+1. Use coordinator credentials to access the operational dashboard.
+2. Keep listings and workshops current, including dates and capacity.
+3. Review the application records and provide the relevant decision.
+4. Maintain workshop participation and attendance from the available roster.
+5. Respond to student support requests and use restricted research views responsibly.
+6. Treat an error message as an unsuccessful action until the record is verified.
+Administrator workflow 
+1. Authenticate with the administrator account created for the deployment.
+2. Use protected content and diagnostic tools only for necessary maintenance.
+3. Take a backup before operations that could affect stored data.
+4. Check a restoration result and the linked operational records.
+5. Store backups securely and log out after administration.
+Local setup and production preparation 
+Install a Node.js version compatible with the project dependencies and native SQLite support, then run 
+npm install in the project folder.
+
+PAGE 39
+28
+Use npm run dev for local development. The configured API and frontend addresses should be read 
+from the terminal output.
+Run npm run typecheck, npm run build and npm test before preparing a release.
+For production, set NODE_ENV=production, a persistent DB_PATH and CLIENT_URL matching the 
+actual website origin. Configure HTTPS and the intended reverse proxy.
+Provision an administrator with explicit credentials using npm run admin:provision -- <username> 
+<password>. Use protected credential handling in the deployment environment.
+Run npm start after the build. Verify login, authorised changes and direct route refreshes on the actual 
+host.
+Use npm run backup:db for the database backup utility. Test recovery with a disposable copy before 
+relying on a backup. Do not run demo reset commands against the real database.
+If an operation fails 
+An error should be investigated rather than treated as a successful save. Recheck the record, connection 
+and account permissions. Report reproducible failures to the administrator with the relevant steps, 
+keeping personal information private.

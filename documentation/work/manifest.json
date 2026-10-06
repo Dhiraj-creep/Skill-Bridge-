@@ -1,0 +1,94 @@
+{
+  "reference": "C:\\Users\\dhiraj\\Downloads\\IT DS CEP Documentation for gpt.docx",
+  "sha256": "846aa795df0cecd3b1282972af42f6dfb811932c0131a6fd7f1c21634640dd25",
+  "parts": {
+    "[Content_Types].xml": {
+      "size": 2199,
+      "sha256": "39aa63f2e77d9f8b718a6dd898ba33fe5347045fea8bbae55c9d3741ee14b91a"
+    },
+    "_rels/.rels": {
+      "size": 590,
+      "sha256": "e19238d7a71fa7a2490776252686f70e2de6238c87cd509b5e3a3cc07c2ea4df"
+    },
+    "word/document.xml": {
+      "size": 262429,
+      "sha256": "3e71126f43a25f0ae23aec6d77d70ca3e1a5321806937de4992ea94a0259b600"
+    },
+    "word/_rels/document.xml.rels": {
+      "size": 2184,
+      "sha256": "51b96d06c324ab32726ccd0648deb83b24299adbb14b1a97fedc43b9ce7c23bf"
+    },
+    "word/footnotes.xml": {
+      "size": 3196,
+      "sha256": "77c940558b9fd92db3cf84c2bd3696a9442c8cf7a821c549374729653e5a42b5"
+    },
+    "word/endnotes.xml": {
+      "size": 3190,
+      "sha256": "916e06a883d5f0ac956d07fac4d5aa991c8369cf79dcd0f4848626050a228745"
+    },
+    "word/footer1.xml": {
+      "size": 2929,
+      "sha256": "5dbc7b15dcb730ea096d2599148bfe7d3a27f5e750f2622655ca8fd9ae5348d8"
+    },
+    "word/footer2.xml": {
+      "size": 3469,
+      "sha256": "4afb588c1a788fb03abb496544d413f912b32af47b02c2950501688f4e8eee84"
+    },
+    "word/media/image1.png": {
+      "size": 22914,
+      "sha256": "2ee829a9e87f239fa72fdc9eb4119a4f543233ee302c92738a6779c17b9d552e"
+    },
+    "word/media/image2.png": {
+      "size": 3236,
+      "sha256": "66d72b0161e1c95dd0738d0de64dba65426cb0f4223521c1f8b8d1871c203fb7"
+    },
+    "word/media/image3.jpeg": {
+      "size": 109515,
+      "sha256": "ada268372c58bcaa19a1885e0d5c0f6e1fbee13740b5f39ea040124df73ce22e"
+    },
+    "word/theme/theme1.xml": {
+      "size": 6799,
+      "sha256": "2fc1eb21b61950e440496e896ec96386689edad2ca3bd95df0c134b32afe6431"
+    },
+    "word/settings.xml": {
+      "size": 5433,
+      "sha256": "d4806ea7d562c4787f8a90d50a44d28b03ff433ee8452d0f69df3b5456b0b085"
+    },
+    "customXml/item1.xml": {
+      "size": 306,
+      "sha256": "6484d95a7eb59c4beac874cc1fae10b7f7f4cfb7caeb09dfc375ad3ac4ad6ba0"
+    },
+    "customXml/itemProps1.xml": {
+      "size": 341,
+      "sha256": "fcdfdbd62b3c08cd9d973dcb5d3f87c75c7e820f7b43377dd8aa6b4e0cb95d04"
+    },
+    "word/numbering.xml": {
+      "size": 87068,
+      "sha256": "16bbfefdd3947aec9771fb344f3867b55a11ef5457c7178e8f8e6256437799d2"
+    },
+    "word/styles.xml": {
+      "size": 39372,
+      "sha256": "724c6615e0f3e427f2bf40dcae588dacc9055d2b68f17b38abd1eac72bd602dd"
+    },
+    "word/webSettings.xml": {
+      "size": 1899,
+      "sha256": "c7be6d9a7f21a833028f4ed1d852aae0ec8604b66ee7dbb73326407d52d20629"
+    },
+    "word/fontTable.xml": {
+      "size": 2900,
+      "sha256": "af6f0c2ff82f47d19cb3317ed1bd92539b65767bf0b36d7e4179e29ba058a6d2"
+    },
+    "docProps/core.xml": {
+      "size": 743,
+      "sha256": "bdd81b0f9a29bc1ec97a6bf6371daf0669a7e32ce3816e987b54d8614deaf133"
+    },
+    "docProps/app.xml": {
+      "size": 994,
+      "sha256": "4dce53e1f740adb75392912d5b965f68b5da5d589cfccfaafec38bf41d344bc3"
+    },
+    "customXml/_rels/item1.xml.rels": {
+      "size": 296,
+      "sha256": "80482f86e196171d66001e0e74d1900408a3aaf2463e54005d251b5f2db9a0b0"
+    }
+  }
+}
