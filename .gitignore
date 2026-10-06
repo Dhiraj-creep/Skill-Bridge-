@@ -35,3 +35,8 @@ dist-ssr
 *.sqlite-shm
 server/database/*.sqlite*
 server/database/backups/*
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
