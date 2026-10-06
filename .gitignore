@@ -40,3 +40,6 @@ server/database/backups/*
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Personal CEP Documentation reports
+CEP_Documentation_*.docx
